@@ -16,11 +16,15 @@ public class RacingGame {
 
     public void start() {
         // 자동차 이름 입력 및 자동차 초기화
-        initializeCars(viewer.readInput());
+        initializeCars(viewer.readCarNames());
         // 자동차 게임 횟수 입력
+        int rounds = Integer.parseInt(viewer.readTryCount());
         // 게임 실행
-        // 차수별 결과 출력
+        playGame(rounds);
         // 최종 우승자 출력
+        String winners = determineWinners();
+        viewer.printFinalWinners(winners);
+
     }
 
     private void initializeCars(String input) {
@@ -33,7 +37,14 @@ public class RacingGame {
 
     private void playGame(int rounds) {
         // 주어진 횟수만큼 게임을 진행
-        // 각 차수별로 모든 자동차의 위치 업데이트
+        for (int i = 0; i < rounds; i++) {
+            // 각 차수별로 모든 자동차의 위치 업데이트
+            //updateCarPositions();
+            // 차수별 결과 출력
+            viewer.printRoundResult(cars);
+        }
+
     }
+
 
 }
