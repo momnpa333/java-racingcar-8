@@ -9,6 +9,6 @@ public class GameController {
     }
 
     public void run() {
-        // 게임 시작
+        racingGame.start();
     }
 }
