@@ -6,7 +6,7 @@ public class Car {
     private int position;
 
     public Car(String name) {
-        Validation.validateName(name);
+        Validator.validateName(name);
         this.name = name;
         this.position = 0;
     }
@@ -31,7 +31,7 @@ public class Car {
         return clone;
     }
 
-    private static class Validation {
+    private static class Validator {
 
         public static void validateName(String name) {
             validateBlank(name);
