@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import racingcar.strategy.MoveStrategy;
 
 public class CarGroup {
 
@@ -21,7 +22,6 @@ public class CarGroup {
         }
     }
 
-    // ✅ 스냅샷 반환
     public List<Car> getCars() {
         List<Car> snapshot = cars.stream()
             .map(Car::copy) // 각 Car 복제

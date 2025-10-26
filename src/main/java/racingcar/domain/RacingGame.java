@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import java.util.List;
+import racingcar.strategy.MoveStrategy;
 import racingcar.view.Viewer;
 
 public class RacingGame {

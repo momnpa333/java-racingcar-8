@@ -3,6 +3,7 @@ package racingcar.domain;
 public class Car {
 
     private final String name;
+    private final int MOVE_CRITERIA = 4;
     private int position;
 
     public Car(String name) {
@@ -12,7 +13,7 @@ public class Car {
     }
 
     public void move(int optionNumber) {
-        if (optionNumber >= 4) {
+        if (optionNumber >= MOVE_CRITERIA) {
             position++;
         }
     }

@@ -3,7 +3,7 @@ package racingcar.factory;
 import racingcar.domain.GameController;
 import racingcar.domain.Parser;
 import racingcar.domain.RacingGame;
-import racingcar.domain.RandomMoveStrategy;
+import racingcar.strategy.RandomMoveStrategy;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 import racingcar.view.Viewer;
