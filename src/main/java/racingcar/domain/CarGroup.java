@@ -7,7 +7,7 @@ public class CarGroup {
 
     private final List<Car> cars;
 
-    private CarGroup(List<Car> cars) {
+    public CarGroup(List<Car> cars) {
         if (cars == null || cars.isEmpty()) {
             throw new IllegalArgumentException("자동차 목록이 비어 있습니다.");
         }
@@ -21,7 +21,15 @@ public class CarGroup {
         }
     }
 
-    public List<Car> findWinners() {
+    // ✅ 스냅샷 반환
+    public List<Car> getCars() {
+        List<Car> snapshot = cars.stream()
+            .map(Car::copy) // 각 Car 복제
+            .toList();
+        return List.copyOf(snapshot); // 완전 불변 리스트로 감싸기
+    }
+
+    public List<Car> getWinners() {
         int winnerLength = cars.stream().mapToInt(Car::getPosition).max().orElse(0);
         return cars.stream()
             .filter(c -> c.getPosition() == winnerLength)
