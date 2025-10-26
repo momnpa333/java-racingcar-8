@@ -3,6 +3,7 @@ package racingcar;
 import racingcar.domain.GameController;
 import racingcar.domain.Parser;
 import racingcar.domain.RacingGame;
+import racingcar.domain.RandomMoveStrategy;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 import racingcar.view.Viewer;
@@ -15,7 +16,8 @@ public class Application {
         OutputView outputView = new OutputView();
         Viewer viewer = new Viewer(outputView, inputView);
         Parser parser = new Parser();
-        RacingGame racingGame = new RacingGame(viewer, parser);
+        RandomMoveStrategy randomMoveStrategy = new RandomMoveStrategy();
+        RacingGame racingGame = new RacingGame(viewer, parser, randomMoveStrategy);
         GameController gameController = new GameController(racingGame);
         gameController.run();
     }
