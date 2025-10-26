@@ -17,9 +17,25 @@ public class InputView {
         return readInput();
     }
 
-    public String readTryCount() {
+    public int readTryCount() {
         System.out.println(INPUT_TRY_COUNT_MESSAGE);
-        return readInput();
+        return validateTryNumber(readInput());
+    }
+    
+    private int validateTryNumber(String input) {
+        int tryCount = parseToInt(input);
+        if (tryCount <= 0) {
+            throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
+        }
+        return tryCount;
+    }
+
+    private int parseToInt(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다.");
+        }
     }
 
 }
