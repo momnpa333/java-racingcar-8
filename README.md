@@ -68,13 +68,20 @@
 1. Viewer 도메인 객체는 사용자로부터 입력을 받는 책임을 가진다.
 2. Viewer 도메인 객체는 게임 진행 상황과 결과를 출력하는 책임을 가진다.
 
-### Random Number Generator
+## 리팩토링
 
-1. Random Number Generator 도메인 객체는 랜덤 숫자를 생성하는 책임을 가진다.
-2. Random Number Generator 도메인 객체는 camp.nextstep.edu.missionutils.Randoms API를 사용하여 랜덤 숫자를 생성한다.
-3. Random Number Generator 도메인 객체는 전진 조건에 필요한 랜덤 숫자를 제공한다.
-4. Random Number Generator 도메인 객체는 0부터 9까지의 숫자 중 하나를 무작위로 선택한다.
+### 문제점
 
+1. Application에서 의존성 주입을 직접 처리하고 있음
+2. RacingGame이 너무 많은 책임을 가지고 있음
+   2.1. 자동차 상태 업데이트 책임
+   2.2. 우승자 결정 책임
+
+### 개선 사항
+
+1. DI 컨테이너 도입 검토
+2. RacingGame의 책임 분리 검토
+   2.1. updateCars와 determineWinners 책임을 별도의 클래스에게 위임
 
 
 
