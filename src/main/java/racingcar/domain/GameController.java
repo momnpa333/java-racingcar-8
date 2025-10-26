@@ -2,13 +2,13 @@ package racingcar.domain;
 
 public class GameController {
 
-    private final RacingGame racingGame;
+    private final GamePack gamePack;
 
-    public GameController(RacingGame racingGame) {
-        this.racingGame = racingGame;
+    public GameController(GamePack gamePack) {
+        this.gamePack = gamePack;
     }
 
     public void run() {
-        racingGame.start();
+        gamePack.start();
     }
 }

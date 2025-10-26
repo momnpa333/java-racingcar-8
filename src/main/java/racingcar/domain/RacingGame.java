@@ -4,7 +4,7 @@ import java.util.List;
 import racingcar.strategy.MoveStrategy;
 import racingcar.view.Viewer;
 
-public class RacingGame {
+public class RacingGame implements GamePack {
 
     private final Viewer viewer;
     private final Parser parser;
@@ -18,6 +18,7 @@ public class RacingGame {
         this.moveStrategy = moveStrategy;
     }
 
+    @Override
     public void start() {
         initializeCarGroup(viewer.readCarNames());
         int rounds = viewer.readTryCount();
