@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
 import racingcar.view.Viewer;
 
@@ -39,12 +40,32 @@ public class RacingGame {
         // 주어진 횟수만큼 게임을 진행
         for (int i = 0; i < rounds; i++) {
             // 각 차수별로 모든 자동차의 위치 업데이트
-            //updateCarPositions();
+            updateCarPositions();
             // 차수별 결과 출력
             viewer.printRoundResult(cars);
         }
 
     }
 
+    private void updateCarPositions() {
+        for (Car car : cars) {
+            int randomNumber = Randoms.pickNumberInRange(0, 9);
+            car.move(randomNumber);
+        }
+    }
+
+    private String determineWinners() {
+        int maxPosition = cars.stream()
+            .mapToInt(Car::getPosition)
+            .max()
+            .orElse(0);
+
+        List<String> winners = cars.stream()
+            .filter(car -> car.getPosition() == maxPosition)
+            .map(Car::getName)
+            .toList();
+
+        return String.join(", ", winners);
+    }
 
 }
