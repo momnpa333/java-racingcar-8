@@ -84,6 +84,7 @@
 2. RacingGame의 책임 분리 검토
    2.1. updateCars와 determineWinners 책임을 별도의 클래스에게 위임
 3. Parser를 인스턴스 메서드로 변경하고, DELIMITERS를 인스턴스 변수로 변경
+4. 랜덤 전략을 위한 인터페이스 도입 검토
 
 
 
