@@ -41,5 +41,40 @@
 -[ ] 해당 거리를 가진 모든 자동차를 우승자로 선정한다.
 -[ ] 우승자가 여러 명일 경우 쉼표(,)로 구분해 출력한다.
 
+## ✅ 초반 설계
+
+### Application(client)
+
+1. 게임 컨트롤러를 만들고 사용자는 run() 메서드를 호출하여 게임을 시작한다.
+
+### Game Controller
+
+1. 게임 컨트롤러 도메인 객체들에게 게임 진행 책임을 위임한다.
+
+### RacingGame
+
+1. RacingGame 도메인 객체는 입출력 처리 책임을 viewer에게 위임한다.
+2. RacingGame 도메인 객체는 사용자로부터 자동차 이름과 시도 횟수를 입력받아 게임을 초기화한다.
+3. RacingGame 도메인 객체는 게임을 진행하고 결과를 관리한다.
+4. RacingGame 도메인 객체는 우승자를 결정한다.
+
+### Car
+
+1. Car 도메인 객체는 자동차의 이름과 현재 위치(전진 거리)를 관리한다.
+2. Car 도메인 객체는 전진 조건에 따라 전진하거나 멈춘다.
+
+### Viewer
+
+1. Viewer 도메인 객체는 사용자로부터 입력을 받는 책임을 가진다.
+2. Viewer 도메인 객체는 게임 진행 상황과 결과를 출력하는 책임을 가진다.
+
+### Random Number Generator
+
+1. Random Number Generator 도메인 객체는 랜덤 숫자를 생성하는 책임을 가진다.
+2. Random Number Generator 도메인 객체는 camp.nextstep.edu.missionutils.Randoms API를 사용하여 랜덤 숫자를 생성한다.
+3. Random Number Generator 도메인 객체는 전진 조건에 필요한 랜덤 숫자를 제공한다.
+4. Random Number Generator 도메인 객체는 0부터 9까지의 숫자 중 하나를 무작위로 선택한다.
+
+
 
 
