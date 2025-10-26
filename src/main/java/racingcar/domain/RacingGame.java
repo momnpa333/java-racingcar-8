@@ -19,7 +19,7 @@ public class RacingGame {
 
     public void start() {
         initializeCarGroup(viewer.readCarNames());
-        int rounds = Integer.parseInt(viewer.readTryCount());
+        int rounds = viewer.readTryCount();
         playGame(rounds);
         viewer.printWinners(carGroup.getWinners());
     }
