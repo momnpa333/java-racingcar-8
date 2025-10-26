@@ -76,12 +76,14 @@
 2. RacingGame이 너무 많은 책임을 가지고 있음
    2.1. 자동차 상태 업데이트 책임
    2.2. 우승자 결정 책임
+3. Parser에서 무의미한 static 메서드 사용
 
 ### 개선 사항
 
 1. DI 컨테이너 도입 검토
 2. RacingGame의 책임 분리 검토
    2.1. updateCars와 determineWinners 책임을 별도의 클래스에게 위임
+3. Parser를 인스턴스 메서드로 변경하고, DELIMITERS를 인스턴스 변수로 변경
 
 
 
