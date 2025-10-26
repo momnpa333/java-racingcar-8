@@ -16,6 +16,7 @@ public class RacingGame {
 
     public void start() {
         // 자동차 이름 입력 및 자동차 초기화
+        initializeCars(viewer.readInput());
         // 자동차 게임 횟수 입력
         // 게임 실행
         // 차수별 결과 출력
@@ -24,6 +25,10 @@ public class RacingGame {
 
     private void initializeCars(String input) {
         // 자동차 이름을 기반으로 Car 객체 생성 및 cars 리스트 초기화
+        List<String> carNames = parser.parseCarNames(input);
+        cars = carNames.stream()
+            .map(Car::new)
+            .toList();
     }
 
     private void playGame(int rounds) {
