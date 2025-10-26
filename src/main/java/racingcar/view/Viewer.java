@@ -13,9 +13,6 @@ public class Viewer {
         this.inputView = inputView;
     }
 
-    public void printResult(String result) {
-        outputView.printResult(result);
-    }
 
     public String readCarNames() {
         return inputView.readCarNames();
@@ -29,8 +26,8 @@ public class Viewer {
         outputView.printRoundResult(roundResult);
     }
 
-    public void printFinalWinners(String winners) {
-        outputView.printFinalWinners(winners);
+    public void printWinners(List<Car> winners) {
+        outputView.printWinners(winners);
     }
 
 
