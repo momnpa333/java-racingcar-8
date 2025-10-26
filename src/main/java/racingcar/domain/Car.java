@@ -24,4 +24,10 @@ public class Car {
         return position;
     }
 
+    public Car copy() {
+        Car clone = new Car(this.name);
+        clone.position = this.position;
+        return clone;
+    }
+
 }
