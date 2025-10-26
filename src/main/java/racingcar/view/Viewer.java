@@ -18,7 +18,7 @@ public class Viewer {
         return inputView.readCarNames();
     }
 
-    public String readTryCount() {
+    public int readTryCount() {
         return inputView.readTryCount();
     }
 
